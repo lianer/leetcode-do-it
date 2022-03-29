@@ -35,6 +35,6 @@ var solution = function (isBadVersion: any) {
 
 console.log(
   solution(function isBadVersion(n: number) {
-    return n >= 3;
+    return n >= 5;
   })(5),
 );
