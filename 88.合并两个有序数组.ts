@@ -10,6 +10,8 @@
  */
 function merge(nums1: number[], m: number, nums2: number[], n: number): void {
   // 双指针，倒序
+  // 正序合并，因 nums1 中 [0 - m-1] 已有元素，需要借用一个新数组暂存排序好的元素，然后再拷贝回 nums1，空间复杂度 O(n)
+  // 倒序合并，因 nums1 中 [m - m+n-1] 都是未使用到的元素（默认被填充为 0），而采用倒序合并的方式，即使 nums2 的最小值大于 nums1 的最大值，即 nums2 全部填充到 [m - m+n+1] 中，也不会覆盖到 [0 - m-1] 的元素，可以非常放心的修改 nums1
 
   let p1 = m - 1;
   let p2 = n - 1;
@@ -27,7 +29,7 @@ function merge(nums1: number[], m: number, nums2: number[], n: number): void {
     cur--;
   }
 
-  console.log(nums1);
+  // console.log(nums1);
 }
 // @lc code=end
 
