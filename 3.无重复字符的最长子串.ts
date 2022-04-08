@@ -31,13 +31,13 @@ function lengthOfLongestSubstring(s: string): number {
 
     if (set.has(ch)) {
       set.delete(s[left]);
-      max = Math.max(max, set.size);
       left++;
     } else {
       set.add(ch);
-      max = Math.max(max, right - left + 1);
       right++;
     }
+
+    max = Math.max(max, set.size);
   }
 
   return max;
