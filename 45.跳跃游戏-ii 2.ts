@@ -23,6 +23,7 @@ function jump(nums: number[]): number {
       cnt++;
     }
   }
+
   return cnt;
 }
 // @lc code=end
