@@ -1,5 +1,7 @@
 /**
 冒泡排序
+
+https://juejin.cn/post/6844904177504616461#heading-8
 */
 
 function bubbleSort(arr) {
