@@ -34,40 +34,33 @@ var rangeSumBST = function (root, low, high) {
     if (!parent) return;
     if (parent.val > low) recursive(parent.left);
     if (parent.val < high) recursive(parent.right);
-    if (parent.val && parent.val >= low && parent.val <= high)
-      sum += parent.val;
+    if (parent.val && parent.val >= low && parent.val <= high) sum += parent.val;
   };
   recursive(root);
   return sum;
 };
 // @lc code=end
 
+export {};
+
 console.log(
   rangeSumBST(
-    new TreeNode(
-      10,
-      new TreeNode(5, new TreeNode(3), new TreeNode(7)),
-      new TreeNode(15, null, new TreeNode(18))
-    ),
+    new TreeNode(10, new TreeNode(5, new TreeNode(3), new TreeNode(7)), new TreeNode(15, null, new TreeNode(18))),
     7,
-    15
+    15,
   ),
-  32
+  32,
 );
 
 console.log(
   rangeSumBST(
     new TreeNode(
       10,
-      new TreeNode(
-        5,
-        new TreeNode(3, new TreeNode(1)),
-        new TreeNode(7, new TreeNode(6))
-      ),
-      new TreeNode(15, new TreeNode(13), new TreeNode(18))
+      new TreeNode(5, new TreeNode(3, new TreeNode(1)), new TreeNode(7, new TreeNode(6))),
+      new TreeNode(15, new TreeNode(13), new TreeNode(18)),
     ),
     6,
-    10
+    10,
   ),
-  23
+  23,
 );
