@@ -1,5 +1,7 @@
 /**
  * 节流
+ * 在每个所设定的等待时间周期内，节流函数只会执行一次
+ * 适用于鼠标移动事件、页面滚动事件、窗口 resize 事件等
  */
 const throttle = function (callback: Function, wait: number) {
   let lastTime = Number.MIN_SAFE_INTEGER;
@@ -26,6 +28,8 @@ throttled();
 
 /**
  * 防抖
+ * 连续调用防抖函数，只有在停止调用后过了所设定时间才会执行
+ * 适用于搜索框文字输入等
  */
 const debounce = function (callback: Function, wait: number) {
   let timer: number = -1;
