@@ -54,9 +54,9 @@ function preorder2(root) {
 // 中序遍历，根节点在中，左 -> 根 -> 右
 function inorder(root, ret = []) {
   if (root) {
-    ret.push(root.left);
+    inorder(root.left, ret);
     ret.push(root);
-    ret.push(root.right);
+    inorder(root.right, ret);
   }
   return ret;
 }
