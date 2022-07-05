@@ -9,8 +9,8 @@ const throttle = function (callback: Function, wait: number) {
   const throttled = () => {
     const curTime = Date.now();
     if (curTime - lastTime > wait) {
-      callback();
       lastTime = curTime;
+      return callback();
     }
   };
 
